@@ -13,6 +13,9 @@ pub enum Event {
         /// The key identifier
         key_code: KeyCode,
 
+        /// Scancode of key, doesn't change with layouts
+        scan_code: u32,
+
         /// The state of the modifier keys
         modifiers: Modifiers,
     },
@@ -21,6 +24,9 @@ pub enum Event {
     KeyReleased {
         /// The key identifier
         key_code: KeyCode,
+
+        /// Scancode of key, doesn't change with layouts
+        scan_code: u32,
 
         /// The state of the modifier keys
         modifiers: Modifiers,

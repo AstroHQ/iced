@@ -87,6 +87,7 @@ pub fn window_event(
                 winit::event::KeyboardInput {
                     virtual_keycode: Some(virtual_keycode),
                     state,
+                    scancode,
                     ..
                 },
             ..
@@ -98,12 +99,14 @@ pub fn window_event(
                 winit::event::ElementState::Pressed => {
                     keyboard::Event::KeyPressed {
                         key_code,
+                        scan_code: *scancode,
                         modifiers,
                     }
                 }
                 winit::event::ElementState::Released => {
                     keyboard::Event::KeyReleased {
                         key_code,
+                        scan_code: *scancode,
                         modifiers,
                     }
                 }
